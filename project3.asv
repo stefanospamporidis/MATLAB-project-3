@@ -1,0 +1,13 @@
+fs=100;
+Ts=1/fs;
+n=0:Ts:1;
+x=4*cos(6*pi*n);
+
+[xmin,d,y,e]=quantizer(x,7);
+z1 = coder(y,d);
+subplot(411);plot(n,y);
+subplot(412);plot(n,e);
+[d,y,e]=quantizer(x,8);
+z2 = coder(y,d);
+subplot(413);plot(n,y);
+subplot(414);plot(n,e);
